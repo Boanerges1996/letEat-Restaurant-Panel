@@ -1,16 +1,18 @@
 import React, { Component } from "react";
-import {
-  Grid,
-  AppBar,
-  Toolbar,
-  IconButton,
-  MenuItem,
-  Typography,
-  MenuI,
-} from "@material-ui/core";
+import Slideshow from "./imageSlider";
+import Header from "./appBar";
+import Services from "./services.jsx";
+import Footer from "./footer";
 
 export default class Landing extends Component {
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <Header />
+        <Services />
+        <Slideshow />
+        <Footer />
+      </div>
+    );
   }
 }
