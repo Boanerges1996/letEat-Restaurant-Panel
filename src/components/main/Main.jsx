@@ -16,6 +16,7 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import DrawerSideBar from "./sideBar";
 import Dashboard from "./dashboard/dashboard";
 import { useStyles } from "./styles";
+import RestaurantDetails from "./restaurant/restaurant";
 
 class Main extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class Main extends React.Component {
 
     this.state = {
       open: false,
-      dashboard: true,
+      dashboard: false,
       category: false,
       orders: false,
       transactions: false,
@@ -31,6 +32,7 @@ class Main extends React.Component {
       history: false,
       customers: false,
       settings: false,
+      restaurant: true,
       header: "Dashboard",
     };
   }
@@ -92,12 +94,141 @@ class Main extends React.Component {
             </IconButton>
           </div>
           <Divider />
-          <DrawerSideBar />
+          <DrawerSideBar
+            clickCategory={() =>
+              this.setState({
+                header: "Category",
+                dashboard: false,
+                category: true,
+                orders: false,
+                transactions: false,
+                chats: false,
+                history: false,
+                customers: false,
+                settings: false,
+                restaurant: false,
+              })
+            }
+            clickDashboard={() =>
+              this.setState({
+                header: "Dashboard",
+                dashboard: true,
+                category: false,
+                orders: false,
+                transactions: false,
+                chats: false,
+                history: false,
+                customers: false,
+                settings: false,
+                restaurant: false,
+              })
+            }
+            clickOrder={() =>
+              this.setState({
+                header: "Orders",
+                dashboard: false,
+                category: false,
+                orders: true,
+                transactions: false,
+                chats: false,
+                history: false,
+                customers: false,
+                settings: false,
+                restaurant: false,
+              })
+            }
+            clickTransaction={() =>
+              this.setState({
+                header: "Transactions",
+                dashboard: false,
+                category: false,
+                orders: false,
+                transactions: true,
+                chats: false,
+                history: false,
+                customers: false,
+                settings: false,
+                restaurant: false,
+              })
+            }
+            clickChats={() =>
+              this.setState({
+                header: "Chats",
+                dashboard: false,
+                category: false,
+                orders: false,
+                transactions: false,
+                chats: true,
+                history: false,
+                customers: false,
+                settings: false,
+                restaurant: false,
+              })
+            }
+            clickHistory={() =>
+              this.setState({
+                header: "History",
+                dashboard: false,
+                category: false,
+                orders: false,
+                transactions: false,
+                chats: false,
+                history: true,
+                customers: false,
+                settings: false,
+                restaurant: false,
+              })
+            }
+            clickCustomers={() =>
+              this.setState({
+                header: "Customers",
+                dashboard: false,
+                category: false,
+                orders: false,
+                transactions: false,
+                chats: false,
+                history: false,
+                customers: true,
+                settings: false,
+                restaurant: false,
+              })
+            }
+            clickRestaurantInfo={() =>
+              this.setState({
+                header: "Restaurant",
+                dashboard: false,
+                category: false,
+                orders: false,
+                transactions: false,
+                chats: false,
+                history: false,
+                customers: false,
+                settings: false,
+                restaurant: true,
+              })
+            }
+            clickSettings={() =>
+              this.setState({
+                header: "Settings",
+                dashboard: false,
+                category: false,
+                orders: false,
+                transactions: false,
+                chats: false,
+                history: false,
+                customers: false,
+                settings: true,
+                restaurant: false,
+              })
+            }
+          />
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar}>
             {this.state.dashboard ? (
-              <Dashboard clickCategory={() => console.log("Category")} />
+              <Dashboard />
+            ) : this.state.restaurant ? (
+              <RestaurantDetails />
             ) : (
               <div></div>
             )}
