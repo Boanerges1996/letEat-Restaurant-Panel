@@ -14,6 +14,7 @@ import HistoryIcon from "@material-ui/icons/History";
 import PeopleIcon from "@material-ui/icons/People";
 import SettingsIcon from "@material-ui/icons/Settings";
 import RestaurantIcon from "@material-ui/icons/Restaurant";
+import MotorcycleIcon from "@material-ui/icons/Motorcycle";
 
 export default function DrawerSideBar(props) {
   return (
@@ -45,6 +46,12 @@ export default function DrawerSideBar(props) {
           <ReceiptIcon />
         </ListItemIcon>
         <ListItemText primary={"Transactions"} />
+      </ListItem>
+      <ListItem button onClick={props.clickDelivery}>
+        <ListItemIcon>
+          <MotorcycleIcon />
+        </ListItemIcon>
+        <ListItemText primary={"Delivery Personel"} />
       </ListItem>
       <Divider />
       <List>

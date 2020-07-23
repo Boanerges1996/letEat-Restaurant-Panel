@@ -17,6 +17,7 @@ import DrawerSideBar from "./sideBar";
 import Dashboard from "./dashboard/dashboard";
 import { useStyles } from "./styles";
 import RestaurantDetails from "./restaurant/restaurant";
+import DeliveryPersonal from "./delivery/delivery";
 
 class Main extends React.Component {
   constructor(props) {
@@ -32,8 +33,9 @@ class Main extends React.Component {
       history: false,
       customers: false,
       settings: false,
-      restaurant: true,
+      restaurant: false,
       header: "Dashboard",
+      delivery: true,
     };
   }
 
@@ -107,6 +109,7 @@ class Main extends React.Component {
                 customers: false,
                 settings: false,
                 restaurant: false,
+                delivery: false,
               })
             }
             clickDashboard={() =>
@@ -121,6 +124,7 @@ class Main extends React.Component {
                 customers: false,
                 settings: false,
                 restaurant: false,
+                delivery: false,
               })
             }
             clickOrder={() =>
@@ -135,6 +139,7 @@ class Main extends React.Component {
                 customers: false,
                 settings: false,
                 restaurant: false,
+                delivery: false,
               })
             }
             clickTransaction={() =>
@@ -149,6 +154,7 @@ class Main extends React.Component {
                 customers: false,
                 settings: false,
                 restaurant: false,
+                delivery: false,
               })
             }
             clickChats={() =>
@@ -163,6 +169,7 @@ class Main extends React.Component {
                 customers: false,
                 settings: false,
                 restaurant: false,
+                delivery: false,
               })
             }
             clickHistory={() =>
@@ -177,6 +184,7 @@ class Main extends React.Component {
                 customers: false,
                 settings: false,
                 restaurant: false,
+                delivery: false,
               })
             }
             clickCustomers={() =>
@@ -191,6 +199,7 @@ class Main extends React.Component {
                 customers: true,
                 settings: false,
                 restaurant: false,
+                delivery: false,
               })
             }
             clickRestaurantInfo={() =>
@@ -205,6 +214,7 @@ class Main extends React.Component {
                 customers: false,
                 settings: false,
                 restaurant: true,
+                delivery: false,
               })
             }
             clickSettings={() =>
@@ -219,16 +229,34 @@ class Main extends React.Component {
                 customers: false,
                 settings: true,
                 restaurant: false,
+                delivery: false,
+              })
+            }
+            clickDelivery={() =>
+              this.setState({
+                header: "Delivery Personal",
+                dashboard: false,
+                category: false,
+                orders: false,
+                transactions: false,
+                chats: false,
+                history: false,
+                customers: false,
+                settings: false,
+                restaurant: false,
+                delivery: true,
               })
             }
           />
         </Drawer>
         <main className={classes.content}>
-          <div className={classes.toolbar}>
+          <div>
             {this.state.dashboard ? (
               <Dashboard />
             ) : this.state.restaurant ? (
               <RestaurantDetails />
+            ) : this.state.delivery ? (
+              <DeliveryPersonal />
             ) : (
               <div></div>
             )}
