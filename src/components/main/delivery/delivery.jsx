@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Grid, Paper, Button, Card, Drawer } from "@material-ui/core";
+import { Grid, Button, Card, Drawer } from "@material-ui/core";
 import DeliveryForm from "./deliveryForm";
 import ListOfDeliveryPersonel from "./listDeliveryPersonel";
-import Footer from "../../landing/footer";
 
 export default class DeliveryPersonal extends Component {
   constructor(props) {
@@ -48,7 +47,6 @@ export default class DeliveryPersonal extends Component {
           </Grid>
           <Grid item xs={0} sm={1}></Grid>
         </Grid>
-        <Footer />
       </div>
     );
   }
