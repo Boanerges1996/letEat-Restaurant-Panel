@@ -1,0 +1,28 @@
+.container{
+    margin-top: 10%;
+    
+}
+
+.center{
+    margin-top: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+
+.container_btn{
+    height: 200px;
+    position: relative;
+}
+
+.vertical_center{
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    display: block;
+    -ms-transform: translateY(-40%);
+    transform: translateY(-40%);
+    margin-left: 40%;
+}
